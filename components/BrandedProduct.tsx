@@ -14,20 +14,35 @@ export default function BrandedProduct() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {/* Image */}
+          {/* Images - Two skin options */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative group"
+            className="space-y-6"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 blur-3xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <img
-              src="/images/beetoo-skin-mockup.jpg"
-              alt="BEETOO Branded Mac mini with custom skin"
-              className="relative w-full rounded-2xl shadow-2xl group-hover:shadow-orange-500/30 transition-shadow duration-300"
-            />
+            {/* Gradient Skin */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 blur-3xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <img
+                src="/images/beetoo-skin-mockup.jpg"
+                alt="BEETOO Gradient skin - Black to Orange"
+                className="relative w-full rounded-2xl shadow-2xl group-hover:shadow-orange-500/30 transition-shadow duration-300"
+              />
+              <p className="text-center text-sm text-slate-400 mt-2">Gradient Design</p>
+            </div>
+
+            {/* Carbon Fiber Skin */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-500/20 to-slate-700/20 blur-3xl rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <img
+                src="/images/beetoo-carbon-skin.jpg"
+                alt="BEETOO Carbon Fiber skin"
+                className="relative w-full rounded-2xl shadow-2xl group-hover:shadow-slate-500/30 transition-shadow duration-300"
+              />
+              <p className="text-center text-sm text-slate-400 mt-2">Carbon Fiber Design</p>
+            </div>
           </motion.div>
 
           {/* Content */}
@@ -63,7 +78,7 @@ export default function BrandedProduct() {
                 <div className="text-orange-400 mt-1">✓</div>
                 <div>
                   <p className="font-bold text-white">Custom SlickWraps Skin</p>
-                  <p className="text-sm text-slate-400">Gradient black-to-orange design with 🐝 branding</p>
+                  <p className="text-sm text-slate-400">Choose: Gradient or Carbon Fiber finish</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
