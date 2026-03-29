@@ -78,15 +78,12 @@ export default function Hero() {
           </motion.div>
 
           {/* Right Column - Visual */}
-          <motion.div variants={itemVariants} className="relative h-96 flex items-center justify-center">
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 blur-3xl rounded-full opacity-30 animate-pulse" />
-            
-            <div className="relative z-10 text-center">
-              <div className="text-8xl mb-4">🔐</div>
-              <p className="text-lg font-bold text-orange-300">Self-Signed File</p>
-              <p className="text-sm text-slate-400 mt-2">Proof you made it</p>
-              <p className="text-xs text-slate-500 mt-4">Blockchain-verified ownership</p>
-            </div>
+          <motion.div variants={itemVariants} className="relative">
+            <img 
+              src="/images/beetoo-hero-macmini.jpg"
+              alt="BEETOO Mac mini with brand management dashboard"
+              className="w-full rounded-lg shadow-2xl"
+            />
 
             {/* Floating elements */}
             <motion.div

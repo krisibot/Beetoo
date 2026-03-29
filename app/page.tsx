@@ -4,6 +4,7 @@ import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
 import HowItWorks from "@/components/HowItWorks";
 import CaseStudies from "@/components/CaseStudies";
+import ImageShowcase from "@/components/ImageShowcase";
 import Pricing from "@/components/Pricing";
 import Timeline from "@/components/Timeline";
 import EarlyAccess from "@/components/EarlyAccess";
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <Problem />
       <Solution />
+      <ImageShowcase />
       <HowItWorks />
       <CaseStudies />
       <Pricing />
