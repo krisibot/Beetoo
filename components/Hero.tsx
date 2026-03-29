@@ -80,8 +80,8 @@ export default function Hero() {
           {/* Right Column - Visual */}
           <motion.div variants={itemVariants} className="relative">
             <img 
-              src="/images/beetoo-hero-macmini.jpg"
-              alt="BEETOO Mac mini with brand management dashboard"
+              src="/images/beetoo-branded-macmini.jpg"
+              alt="Designer using BEETOO on Mac mini"
               className="w-full rounded-lg shadow-2xl"
             />
 
