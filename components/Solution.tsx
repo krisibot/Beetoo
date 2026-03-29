@@ -1,61 +1,14 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import {
-  Lock,
-  Cpu,
-  HardDrive,
-  Smartphone,
-  Globe,
-  DollarSign,
-} from "lucide-react";
-
-const features = [
-  {
-    icon: Lock,
-    title: "Immutable Ownership Proof",
-    description:
-      "Every asset gets a cryptographic fingerprint stored on blockchain. You own the proof.",
-  },
-  {
-    icon: Cpu,
-    title: "AI Brand Manager",
-    description:
-      "Your own AI assistant that tags, describes, and organizes assets the way you think.",
-  },
-  {
-    icon: HardDrive,
-    title: "Works Offline",
-    description:
-      "Everything lives on your device. No cloud. No subscription tracking. Pure privacy.",
-  },
-  {
-    icon: Smartphone,
-    title: "Plug & Play",
-    description:
-      "Unbox it. Plug it in. Start protecting assets. No tech skills required.",
-  },
-  {
-    icon: Globe,
-    title: "Global Access",
-    description:
-      "Share assets with your team while keeping full control. Permissioning is built-in.",
-  },
-  {
-    icon: DollarSign,
-    title: "Pay Per Use",
-    description: "No subscriptions. Only pay for assets you actually protect.",
-  },
-];
+import { motion } from 'framer-motion';
+import { CheckCircle, Lock, DollarSign, Shield } from 'lucide-react';
 
 export default function Solution() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-      },
+      transition: { staggerChildren: 0.15 },
     },
   };
 
@@ -64,49 +17,147 @@ export default function Solution() {
     visible: { opacity: 1, y: 0 },
   };
 
+  const solutions = [
+    {
+      icon: Shield,
+      title: 'Files Sign Themselves',
+      description: 'Cryptographic proof embedded in metadata. You created it + when. Immutable record on blockchain. AI can\'t forge this.',
+      benefit: 'Proof of creation (forever)',
+    },
+    {
+      icon: Lock,
+      title: 'One File, Infinite Shares',
+      description: 'No copying needed. Share via smart contract (wallet permissions). Every use is tracked. One canonical version lives on Arweave.',
+      benefit: 'Zero duplication (saves planet)',
+    },
+    {
+      icon: DollarSign,
+      title: 'Automatic Royalties',
+      description: 'License your file via contract. When others use it, royalties flow back to you—instantly, on-chain. No middleman.',
+      benefit: 'Earn on every use',
+    },
+  ];
+
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
       <div className="container-max">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" id="features">
-            Meet BEETOO
-          </h2>
-          <p className="text-xl text-gray-600">
-            Cryptographic proof. AI assistance. Complete privacy. All built in.
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="text-center mb-16"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {features.map((feature, idx) => {
-            const Icon = feature.icon;
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white mb-4">
+            The Solution: <span className="text-orange-400">Self-Signed</span>
+          </motion.h2>
+          <motion.p variants={itemVariants} className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Files that prove they're real. Files that earn. Files that can't be stolen because they're legally signed.
+          </motion.p>
+        </motion.div>
+
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {solutions.map((solution, index) => {
+            const Icon = solution.icon;
             return (
               <motion.div
-                key={idx}
+                key={index}
                 variants={itemVariants}
-                className="p-8 rounded-xl bg-gradient-to-br from-beetoo-orange/10 to-beetoo-orange/5 border border-beetoo-orange/20 hover:border-beetoo-orange/50 transition group"
+                className="group relative bg-gradient-to-br from-orange-900/20 to-slate-900/50 border border-orange-500/20 rounded-xl p-8 hover:border-orange-500/40 transition-all duration-300"
               >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                  <Icon className="text-beetoo-orange" size={32} />
+                <div className="relative">
+                  <Icon className="w-10 h-10 text-orange-400 mb-4" />
+                  <h3 className="text-xl font-bold text-white mb-3">{solution.title}</h3>
+                  <p className="text-slate-300 mb-6 leading-relaxed">{solution.description}</p>
+                  <div className="pt-4 border-t border-orange-500/20">
+                    <p className="text-sm text-orange-300 font-semibold flex items-center gap-2">
+                      <CheckCircle size={16} /> {solution.benefit}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {feature.description}
-                </p>
               </motion.div>
             );
           })}
+        </motion.div>
+
+        {/* How It Works */}
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="bg-slate-800/50 border border-slate-700 rounded-xl p-12"
+        >
+          <h3 className="text-2xl font-bold text-white mb-12 text-center">Creator Workflow</h3>
+          
+          <div className="grid md:grid-cols-5 gap-4 items-center mb-12">
+            {/* Step 1 */}
+            <div className="text-center">
+              <div className="bg-orange-900/30 border border-orange-500 rounded-lg p-6 mb-4">
+                <p className="text-3xl mb-2">📁</p>
+                <p className="text-sm font-bold text-white">Create</p>
+              </div>
+              <p className="text-xs text-slate-400">Your design, photo, or algorithm</p>
+            </div>
+
+            <div className="flex justify-center text-2xl text-orange-400">→</div>
+
+            {/* Step 2 */}
+            <div className="text-center">
+              <div className="bg-orange-900/30 border border-orange-500 rounded-lg p-6 mb-4">
+                <p className="text-3xl mb-2">🔐</p>
+                <p className="text-sm font-bold text-white">Sign</p>
+              </div>
+              <p className="text-xs text-slate-400">BEETOO embeds proof + metadata</p>
+            </div>
+
+            <div className="flex justify-center text-2xl text-orange-400">→</div>
+
+            {/* Step 3 */}
+            <div className="text-center">
+              <div className="bg-orange-900/30 border border-orange-500 rounded-lg p-6 mb-4">
+                <p className="text-3xl mb-2">⛓️</p>
+                <p className="text-sm font-bold text-white">Publish</p>
+              </div>
+              <p className="text-xs text-slate-400">Lives forever on Arweave</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 text-center">
+            <div className="border border-green-500/30 bg-green-950/20 rounded-lg p-4">
+              <p className="text-green-300 font-bold mb-2">Creators Share</p>
+              <p className="text-sm text-slate-300">Grant wallet permission via contract</p>
+            </div>
+            <div className="border border-blue-500/30 bg-blue-950/20 rounded-lg p-4">
+              <p className="text-blue-300 font-bold mb-2">Users Get License</p>
+              <p className="text-sm text-slate-300">Smart contract enforces rights</p>
+            </div>
+            <div className="border border-yellow-500/30 bg-yellow-950/20 rounded-lg p-4">
+              <p className="text-yellow-300 font-bold mb-2">Royalties Flow</p>
+              <p className="text-sm text-slate-300">Automatic payment on every use</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Why Blockchain */}
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mt-16 bg-slate-800/30 border border-slate-700/50 rounded-xl p-8 text-center"
+        >
+          <h3 className="text-xl font-bold text-white mb-4">Why Blockchain?</h3>
+          <p className="text-slate-300 leading-relaxed">
+            Blockchain isn't trendy—it's essential. It's the only way to create <span className="text-orange-300 font-bold">legally binding proof</span> that lives outside any company's servers. Your file's ownership record can never be deleted, edited, or disputed.
+          </p>
+          <p className="text-slate-400 text-sm mt-4">When AI floods the world with unsigned copies, a blockchain signature is the only thing that matters legally.</p>
         </motion.div>
       </div>
     </section>

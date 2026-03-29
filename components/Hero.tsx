@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { ChevronRight, Shield, Zap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const containerVariants = {
@@ -21,7 +21,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="pt-32 pb-20 bg-white">
+    <section className="pt-32 pb-20 bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white overflow-hidden">
       <div className="container-max">
         <motion.div
           className="grid md:grid-cols-2 gap-12 items-center"
@@ -32,50 +32,79 @@ export default function Hero() {
         >
           {/* Left Column - Text */}
           <motion.div variants={itemVariants}>
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-              Brand Manager <span className="text-gradient">In a Box</span>
+            <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30">
+              <Shield size={14} className="text-orange-400" />
+              <span className="text-xs font-semibold text-orange-300">Creator Protection</span>
+            </div>
+
+            <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6">
+              Make Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">Files Unkillable</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Your AI-powered creative assistant that proves ownership of every asset, protects your IP, and works completely offline. Just plug in. No setup required.
+
+            <p className="text-xl text-slate-300 mb-6 leading-relaxed">
+              Files that sign themselves. Proof you created them—forever. As AI floods the world with unsigned copies, your work stays authenticated, licensed, and valuable.
+            </p>
+
+            <p className="text-lg text-slate-400 mb-8 leading-relaxed">
+              One canonical file. Infinite shares. Zero stupid copies. Royalties flow automatically.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="btn-gradient px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 group">
-                Reserve Your Device
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 group transition-all hover:scale-105">
+                Get Early Access
                 <ChevronRight size={20} className="group-hover:translate-x-1 transition" />
               </button>
-              <button className="border-2 border-beetoo-orange text-beetoo-orange hover:bg-beetoo-orange hover:text-white px-8 py-3 rounded-lg font-semibold transition">
-                Learn More
+              <button className="border-2 border-slate-600 hover:border-orange-400 text-white px-8 py-3 rounded-lg font-semibold transition">
+                How It Works
               </button>
             </div>
 
-            <p className="text-sm text-gray-500">
-              Available in Midnight Blue, Sunset Orange, Forest Green
-            </p>
+            {/* Key Points */}
+            <div className="space-y-3 text-sm">
+              <div className="flex items-center gap-2 text-slate-300">
+                <span className="text-orange-400 font-bold">✓</span> Proof of creation (timestamped, immutable)
+              </div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <span className="text-orange-400 font-bold">✓</span> AI can't clone signed files
+              </div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <span className="text-orange-400 font-bold">✓</span> Every use = transaction (royalties automatic)
+              </div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <span className="text-orange-400 font-bold">✓</span> One file replaces 1,000 stupid copies
+              </div>
+            </div>
           </motion.div>
 
-          {/* Right Column - Device Visual */}
-          <motion.div
-            variants={itemVariants}
-            className="flex justify-center"
-          >
-            <motion.div
-              className="relative w-full max-w-sm"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              <div className="bg-gradient-beetoo rounded-3xl p-1 shadow-2xl">
-                <div className="bg-white rounded-3xl p-8 aspect-square flex items-center justify-center relative">
-                  <div className="text-7xl">🤖</div>
-                  <div className="absolute top-6 right-6 bg-white px-4 py-2 rounded-full text-xs font-semibold text-beetoo-orange border border-beetoo-orange shadow-lg">
-                    Plug & Play
-                  </div>
-                </div>
-              </div>
+          {/* Right Column - Visual */}
+          <motion.div variants={itemVariants} className="relative h-96 flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 blur-3xl rounded-full opacity-30 animate-pulse" />
+            
+            <div className="relative z-10 text-center">
+              <div className="text-8xl mb-4">🔐</div>
+              <p className="text-lg font-bold text-orange-300">Self-Signed File</p>
+              <p className="text-sm text-slate-400 mt-2">Proof you made it</p>
+              <p className="text-xs text-slate-500 mt-4">Blockchain-verified ownership</p>
+            </div>
 
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-beetoo opacity-20 blur-3xl -z-10 rounded-3xl" />
+            {/* Floating elements */}
+            <motion.div
+              className="absolute top-10 right-10 bg-slate-800/80 backdrop-blur border border-orange-500/30 rounded-lg p-3 text-sm max-w-xs"
+              animate={{ y: [0, -15, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            >
+              <p className="text-orange-300 font-bold">AI Tries to Clone</p>
+              <p className="text-xs text-red-400 mt-1">❌ Can't—file is signed</p>
+            </motion.div>
+
+            <motion.div
+              className="absolute bottom-10 left-10 bg-slate-800/80 backdrop-blur border border-green-500/30 rounded-lg p-3 text-sm max-w-xs"
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+            >
+              <p className="text-green-300 font-bold">Creator Earns</p>
+              <p className="text-xs text-slate-300 mt-1">✓ Royalty on every use</p>
             </motion.div>
           </motion.div>
         </motion.div>
