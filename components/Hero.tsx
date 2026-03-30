@@ -51,10 +51,10 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 group transition-all hover:scale-105">
-                Get Early Access
+              <a href="https://stack-in-a-box-demo.vercel.app" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 group transition-all hover:scale-105">
+                Try Demo
                 <ChevronRight size={20} className="group-hover:translate-x-1 transition" />
-              </button>
+              </a>
               <button className="border-2 border-slate-600 hover:border-orange-400 text-white px-8 py-3 rounded-lg font-semibold transition">
                 How It Works
               </button>
