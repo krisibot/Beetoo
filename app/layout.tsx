@@ -3,14 +3,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://beetoo.app"),
-  title: "BEETOO — Brand Manager in a Box",
+  title: "Stack in a Box — Creator Protection, Complete",
   description:
-    "Cryptographic proof of ownership. AI-powered brand management. Zero setup. Your assets, your proof, your rules.",
+    "Sign your work. Prove it's yours. Earn royalties. One stack, total ownership. Everything creators need to protect their IP in the AI era.",
   keywords:
-    "digital asset management, IP protection, blockchain, creative tools, brand management, on-chain",
-  authors: [{ name: "BEETOO" }],
-  creator: "BEETOO",
-  publisher: "BEETOO",
+    "creator protection, IP protection, blockchain, file signing, royalties, creator tools, on-chain proof, digital ownership",
+  authors: [{ name: "Stack in a Box" }],
+  creator: "Stack in a Box",
+  publisher: "Stack in a Box",
   robots: {
     index: true,
     follow: true,
@@ -26,25 +26,25 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://beetoo.app",
-    title: "BEETOO — Brand Manager in a Box",
+    title: "Stack in a Box — Creator Protection, Complete",
     description:
-      "Cryptographic proof of ownership. AI-powered brand management. Zero setup.",
-    siteName: "BEETOO",
+      "Sign your work. Prove it's yours. Earn royalties. One stack, total ownership.",
+    siteName: "Stack in a Box",
     images: [
       {
         url: "https://beetoo.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "BEETOO - Brand Manager in a Box",
+        alt: "Stack in a Box - Creator Protection",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BEETOO — Brand Manager in a Box",
+    title: "Stack in a Box — Creator Protection, Complete",
     description:
-      "Cryptographic proof of ownership. AI-powered brand management.",
-    creator: "@beetoo_official",
+      "Sign your work. Prove it's yours. Earn royalties. One stack, total ownership.",
+    creator: "@stackinabox",
     images: ["https://beetoo.app/twitter-image.png"],
   },
 };

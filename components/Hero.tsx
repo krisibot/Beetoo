@@ -33,20 +33,20 @@ export default function Hero() {
           {/* Left Column - Text */}
           <motion.div variants={itemVariants}>
             <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30">
-              <Shield size={14} className="text-orange-400" />
-              <span className="text-xs font-semibold text-orange-300">Creator Protection</span>
+              <Zap size={14} className="text-orange-400" />
+              <span className="text-xs font-semibold text-orange-300">Stack in a Box</span>
             </div>
 
             <h1 className="text-5xl md:text-6xl font-black leading-tight mb-6">
-              Make Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">Files Unkillable</span>
+              Creator Protection, <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-400">Complete</span>
             </h1>
 
             <p className="text-xl text-slate-300 mb-6 leading-relaxed">
-              Files that sign themselves. Proof you created them—forever. As AI floods the world with unsigned copies, your work stays authenticated, licensed, and valuable.
+              Your file. Your proof. Your royalties. One stack, total ownership. Sign, prove, earn—everything you need to protect your work in the AI era.
             </p>
 
             <p className="text-lg text-slate-400 mb-8 leading-relaxed">
-              One canonical file. Infinite shares. Zero stupid copies. Royalties flow automatically.
+              Proof of creation. Automatic licensing. Transparent royalties. No intermediaries.
             </p>
 
             {/* CTA Buttons */}
@@ -63,16 +63,16 @@ export default function Hero() {
             {/* Key Points */}
             <div className="space-y-3 text-sm">
               <div className="flex items-center gap-2 text-slate-300">
-                <span className="text-orange-400 font-bold">✓</span> Proof of creation (timestamped, immutable)
+                <span className="text-orange-400 font-bold">✓</span> Sign your work (proof of creation)
               </div>
               <div className="flex items-center gap-2 text-slate-300">
-                <span className="text-orange-400 font-bold">✓</span> AI can't clone signed files
+                <span className="text-orange-400 font-bold">✓</span> License automatically (no middleman)
               </div>
               <div className="flex items-center gap-2 text-slate-300">
-                <span className="text-orange-400 font-bold">✓</span> Every use = transaction (royalties automatic)
+                <span className="text-orange-400 font-bold">✓</span> Earn royalties (every use tracked)
               </div>
               <div className="flex items-center gap-2 text-slate-300">
-                <span className="text-orange-400 font-bold">✓</span> One file replaces 1,000 stupid copies
+                <span className="text-orange-400 font-bold">✓</span> Own your identity (on-chain proof)
               </div>
             </div>
           </motion.div>
