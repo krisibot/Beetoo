@@ -9,6 +9,23 @@ export default function MatrixMarketplace() {
 
   const templates = [
     {
+      id: 0,
+      name: 'Beetoo (Founder Edition)',
+      original: 'Notion + Bynder + Figma',
+      creator: 'Chris Hall (Bynder Founder)',
+      price: '€2/mo',
+      users: 20,
+      rating: 5.0,
+      downloads: 0,
+      category: 'productivity',
+      revenue: '€20M PE recovered',
+      status: 'Alpha',
+      features: ['80% Notion', '100% Bynder DAM', '50% Figma', 'All Local-First'],
+      description: 'Founder-built proof: What Bynder could be if not PE-constrained. 20x faster than cloud.',
+      builderLink: 'Built by: Chris Hall (Bynder founder), Mark van Ewijk (ex-CPO), Rory (CTO)',
+      isFounderEdition: true,
+    },
+    {
       id: 1,
       name: 'Community Notion',
       original: 'Notion',
@@ -224,6 +241,59 @@ export default function MatrixMarketplace() {
         </div>
       </div>
 
+      {/* FOUNDER EDITION HERO */}
+      <div className="bg-gradient-to-r from-orange-900/40 to-orange-800/20 border-b border-orange-600/50 py-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-3xl font-bold text-orange-400 mb-4">👑 Beetoo: Founder Edition</h2>
+              <p className="text-slate-300 mb-4 text-lg">
+                What happens when Bynder founder builds what Bynder could be without PE constraints?
+              </p>
+              <div className="space-y-3 mb-6">
+                <p className="text-slate-200"><span className="text-orange-400 font-bold">80% of Notion</span> features (databases, blocks, sharing) + <span className="text-orange-400 font-bold">100% of Bynder</span> DAM + <span className="text-orange-400 font-bold">50% of Figma</span></p>
+                <p className="text-slate-200"><span className="text-orange-400 font-bold">20x faster</span> than cloud (local-first, zero latency)</p>
+                <p className="text-slate-200"><span className="text-orange-400 font-bold">€20M in PE value</span> recovered (one person, five months)</p>
+              </div>
+              <div className="flex gap-3">
+                <button className="px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg">
+                  🤖 Join as Builder
+                </button>
+                <button className="px-6 py-3 border border-orange-600 text-orange-400 font-bold rounded-lg hover:bg-orange-900/20">
+                  🚀 Early Access
+                </button>
+              </div>
+            </div>
+            <div className="bg-slate-800/50 border border-orange-600/30 rounded-lg p-6">
+              <h3 className="font-bold text-orange-400 mb-4">Building Team</h3>
+              <div className="space-y-3">
+                <div className="flex gap-3 pb-3 border-b border-slate-700">
+                  <div className="text-2xl">👨‍💼</div>
+                  <div>
+                    <p className="font-bold text-white">Chris Hall</p>
+                    <p className="text-sm text-slate-400">Bynder Founder, DAM expert, 15 years</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 pb-3 border-b border-slate-700">
+                  <div className="text-2xl">🎯</div>
+                  <div>
+                    <p className="font-bold text-white">Mark van Ewijk</p>
+                    <p className="text-sm text-slate-400">ex-CPO Bynder, Product architecture</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="text-2xl">⚙️</div>
+                  <div>
+                    <p className="font-bold text-white">Rory (CTO)</p>
+                    <p className="text-sm text-slate-400">Chief Architect, Bynder 2.0 lead</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* CATEGORY BROWSE SECTION */}
       <div className="bg-slate-900/30 border-b border-slate-700 py-12">
         <div className="max-w-7xl mx-auto px-6">
@@ -304,10 +374,23 @@ export default function MatrixMarketplace() {
           {filteredTemplates.map((template) => (
             <div
               key={template.id}
-              className="bg-slate-800/50 border border-slate-700 rounded-lg overflow-hidden hover:border-orange-600/50 transition-all group"
+              className={`rounded-lg overflow-hidden transition-all group ${
+                template.isFounderEdition
+                  ? 'border-2 border-orange-600 bg-gradient-to-br from-orange-900/40 to-orange-800/20 shadow-lg shadow-orange-600/30'
+                  : 'bg-slate-800/50 border border-slate-700 hover:border-orange-600/50'
+              }`}
             >
+              {template.isFounderEdition && (
+                <div className="bg-gradient-to-r from-orange-600 to-orange-500 text-white text-center py-2 text-sm font-bold">
+                  👑 FOUNDER EDITION: What Bynder Could Be
+                </div>
+              )}
               {/* HEADER */}
-              <div className="bg-gradient-to-r from-slate-700 to-slate-600 p-4 flex items-start justify-between">
+              <div className={`p-4 flex items-start justify-between ${
+                template.isFounderEdition
+                  ? 'bg-orange-900/30'
+                  : 'bg-gradient-to-r from-slate-700 to-slate-600'
+              }`}>
                 <div>
                   <h3 className="text-xl font-bold text-orange-400">{template.name}</h3>
                   <p className="text-sm text-slate-300">Originally: {template.original}</p>
@@ -371,16 +454,27 @@ export default function MatrixMarketplace() {
                 </div>
 
                 {/* ACTIONS */}
-                <div className="flex gap-2 pt-2">
-                  <button className="flex-1 px-3 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
-                    <Download size={16} />
-                    Install
-                  </button>
-                  <button className="flex-1 px-3 py-2 border border-slate-600 hover:border-slate-500 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
-                    <Code size={16} />
-                    Source
-                  </button>
-                </div>
+                {template.isFounderEdition ? (
+                  <div className="flex gap-2 pt-2">
+                    <button className="flex-1 px-3 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
+                      🤖 Join as Builder
+                    </button>
+                    <button className="flex-1 px-3 py-2 border border-orange-600 hover:border-orange-500 rounded-lg font-semibold text-sm flex items-center justify-center gap-2 text-orange-400">
+                      🚀 Early Access
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex gap-2 pt-2">
+                    <button className="flex-1 px-3 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
+                      <Download size={16} />
+                      Install
+                    </button>
+                    <button className="flex-1 px-3 py-2 border border-slate-600 hover:border-slate-500 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
+                      <Code size={16} />
+                      Source
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           ))}
