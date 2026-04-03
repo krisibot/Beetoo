@@ -161,12 +161,44 @@ export default function MatrixMarketplace() {
           <div className="flex items-center justify-between mb-6">
             <div>
               <h1 className="text-4xl font-bold">The Matrix Marketplace</h1>
-              <p className="text-slate-400">Community clones of expensive SaaS. Built by the architects.</p>
+              <p className="text-slate-400">🤑 80% cheaper. ⚡ 10x faster. 🔒 100% private.</p>
             </div>
             <div className="text-right">
               <a href="/clone-agent" className="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-lg font-semibold inline-block">
                 → Clone Agent
               </a>
+            </div>
+          </div>
+
+          {/* PPP PILLARS */}
+          <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="bg-gradient-to-br from-green-900/30 to-green-800/20 border border-green-600/50 p-4 rounded-lg">
+              <p className="text-2xl font-bold text-green-400 mb-1">💰 80% Cheaper</p>
+              <p className="text-xs text-slate-400">Notion €600/yr → €120/yr</p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-600/50 p-4 rounded-lg">
+              <p className="text-2xl font-bold text-blue-400 mb-1">⚡ 10x Faster</p>
+              <p className="text-xs text-slate-400">Local-first. No cloud latency.</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border border-purple-600/50 p-4 rounded-lg">
+              <p className="text-2xl font-bold text-purple-400 mb-1">🔒 100% Private</p>
+              <p className="text-xs text-slate-400">Your data. Your server. Your rules.</p>
+            </div>
+          </div>
+
+          {/* PPP PILLARS */}
+          <div className="grid grid-cols-3 gap-4 mb-8">
+            <div className="bg-gradient-to-br from-green-900/30 to-green-800/20 border border-green-600/50 p-4 rounded-lg">
+              <p className="text-2xl font-bold text-green-400 mb-1">💰 80% Cheaper</p>
+              <p className="text-xs text-slate-400">Notion €600/yr → €120/yr</p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-600/50 p-4 rounded-lg">
+              <p className="text-2xl font-bold text-blue-400 mb-1">⚡ 10x Faster</p>
+              <p className="text-xs text-slate-400">Local-first. No cloud latency.</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border border-purple-600/50 p-4 rounded-lg">
+              <p className="text-2xl font-bold text-purple-400 mb-1">🔒 100% Private</p>
+              <p className="text-xs text-slate-400">Your data. Your server. Your rules.</p>
             </div>
           </div>
 
